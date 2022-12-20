@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#topic{
+			background-color: darkblue;
+			text-align: left;
+			padding: 20px;
+		}
+
+		.tag{
+			background-color: seagreen;
+			color: black;
+		}
+
+		name{
+			color: red;
+			border: 1px solid black;
+		}
+
+		
+		.extra name{
+			color: inherit;
+		}
+
+		h1	{ font-weight: bold; font-family: tahoma, sans-serif, arial;}
+
+		
+		li, em	{ text-decoration: underline; font-family: arial, sans-serif;}
+		p em	{ text-decoration: overline; font-family: arial, sans-serif;}
+	</style>
+
+</head>
+<body>
+	<h1 id="topic" style="color: white;">My favorite composers</h1>
+
+
+	<h1 class="tag">Beethoven</h1>
+		<!-- normal element -->
+		<div style="color: black;">
+			<name>Ludwig van Beetoven</name> is one of my <em>favorite composers.</em>
+		</div>
+
+	<h1 class="tag">Tchaikovsky</h1>
+		<!-- inherit element -->
+		<div class="extra";style="color: black";>
+			<name>Peter Tchaikovsky</name> is one of my <em>favorite composers.</em>
+		</div>
+
+	<h1 class="tag">Bruckner</h1>
+		<!-- conflicting element -->
+		<div style="color: black;">
+			<p><name>Anton Bruckner</name> is one of my <em>favorite composers.
+		</div>
+
+
+
+</body>
+</html>
