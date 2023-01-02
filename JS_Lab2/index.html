@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			background-color:lightpink ;
+		}
+		table{
+			border: 2px solid hotpink;
+			color: darkred;
+		}
+		td{
+			border: 1px dashed deeppink;
+			color: darkred;
+		}
+		button{
+			background-color:firebrick;
+			color: white;
+		}
+		button:hover {
+			background-color:deeppink;
+			color: lightpink;
+		}
+
+	</style>	
+</head>
+<body>
+	
+	<img id="d1"  src="d1.png" alt="blank image">
+	<img id="d2"  src="d1.png" alt="blank image">
+	<img id="d3"  src="d1.png" alt="blank image">
+	<img id="d4"  src="d1.png" alt="blank image"><br>
+	<img id="d5"  src="d1.png" alt="blank image">
+	<img id="d6"  src="d1.png" alt="blank image">
+	<img id="d7"  src="d1.png" alt="blank image">
+	<img id="d8"  src="d1.png" alt="blank image"><br>
+	<img id="d9"  src="d1.png" alt="blank image">
+	<img id="d10" src="d1.png" alt="blank image">
+	<img id="d11" src="d1.png" alt="blank image">
+	<img id="d12" src="d1.png" alt="blank image"><br>
+	<form action="#">
+		<button id="rollButton" type="button" value="Roll Dice">Roll Dice</button> 
+	</form>
+	<div id="frequencyTable"></div>
+
+	<script>
+
+		window.addEventListener("load",start);
+		var d1img,d2img,d3img,d4img,d5img,d6img,d7img,d8img,d9img,d10img,d11img,d12img;
+		var imgs=[d1img,d2img,d3img,d4img,d5img,d6img,d7img,d8img,d9img,d10img,d11img,d12img];
+		var f1=0,f2=0,f3=0,f4=0,f5=0,f6=0;
+		var totalDice=0;
+
+		function start(){
+			var button=document.getElementById('rollButton');
+			button.addEventListener("click",roll);
+			for(var i=1;i<=12;i++){
+				imgs[i]=document.getElementById('d'+i);
+			}
+
+		}
+		function roll(){
+			for(var i=1;i<=12;i++){
+				setImg(imgs[i]);
+			}
+			updateFrequencyTable();
+		}
+		function setImg(dImg){
+			var value=Math.floor(1+Math.random()*6);
+			dImg.setAttribute("src","d"+value+".png");
+			dImg.setAttribute("alt","die image"+value+"spot(s)");
+			totalRoll(value);
+			totalDice++;
+		}
+		function totalRoll(value){
+			switch (value){
+				case 1:
+				f1++;
+				break;
+				case 2:
+				f2++;
+				break;
+				case 3:
+				f3++;
+				break;
+				case 4:
+				f4++;
+				break;
+				case 5:
+				f5++;
+				break;
+				case 6:
+				f6++;
+				break;
+			}
+		}
+		function updateFrequencyTable(){
+			var table=document.getElementById('frequencyTable');	
+			table.innerHTML="<table>"+"<caption>Die Rolling Frequencies</caption>"+"<thead><th>Face</th>"+"<th>Frequency</th>"+"<th>Percent</th></thead>"+
+							"<tbody> <tr><td>1</td><td>"+f1+"</td><td>"+Math.floor((f1/totalDice)*100)+"%"+"</td></tr>"+ 
+									"<tr><td>2</td><td>"+f2+"</td><td>"+Math.floor((f2/totalDice)*100)+"%"+"</td></tr>"+ 
+									"<tr><td>3</td><td>"+f3+"</td><td>"+Math.floor((f3/totalDice)*100)+"%"+"</td></tr>"+ 
+									"<tr><td>4</td><td>"+f4+"</td><td>"+Math.floor((f4/totalDice)*100)+"%"+"</td></tr>"+ 
+									"<tr><td>5</td><td>"+f5+"</td><td>"+Math.floor((f5/totalDice)*100)+"%"+"</td></tr>"+ 
+									"<tr><td>6</td><td>"+f6+"</td><td>"+Math.floor((f6/totalDice)*100)+"%"+"</td></tr> </tbody>"+"</table>";
+		}
+	</script> 
+</body>
+</html>	
