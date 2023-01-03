@@ -3,7 +3,7 @@
 <head>
 	<style type="text/css">
 		body{
-			background-color:lightpink ;
+			background-color:white ;
 		}
 		table{
 			border: 2px solid hotpink;
@@ -26,18 +26,18 @@
 </head>
 <body>
 	
-	<img id="d1"  src="d1.png" alt="blank image">
-	<img id="d2"  src="d1.png" alt="blank image">
-	<img id="d3"  src="d1.png" alt="blank image">
-	<img id="d4"  src="d1.png" alt="blank image"><br>
-	<img id="d5"  src="d1.png" alt="blank image">
-	<img id="d6"  src="d1.png" alt="blank image">
-	<img id="d7"  src="d1.png" alt="blank image">
-	<img id="d8"  src="d1.png" alt="blank image"><br>
-	<img id="d9"  src="d1.png" alt="blank image">
-	<img id="d10" src="d1.png" alt="blank image">
-	<img id="d11" src="d1.png" alt="blank image">
-	<img id="d12" src="d1.png" alt="blank image"><br>
+	<img id="d1"  src="die1.png" alt="blank image">
+	<img id="d2"  src="die1.png" alt="blank image">
+	<img id="d3"  src="die1.png" alt="blank image">
+	<img id="d4"  src="die1.png" alt="blank image"><br>
+	<img id="d5"  src="die1.png" alt="blank image">
+	<img id="d6"  src="die1.png" alt="blank image">
+	<img id="d7"  src="die1.png" alt="blank image">
+	<img id="d8"  src="die1.png" alt="blank image"><br>
+	<img id="d9"  src="die1.png" alt="blank image">
+	<img id="d10" src="die1.png" alt="blank image">
+	<img id="d11" src="die1.png" alt="blank image">
+	<img id="d12" src="die1.png" alt="blank image"><br>
 	<form action="#">
 		<button id="rollButton" type="button" value="Roll Dice">Roll Dice</button> 
 	</form>
@@ -67,7 +67,7 @@
 		}
 		function setImg(dImg){
 			var value=Math.floor(1+Math.random()*6);
-			dImg.setAttribute("src","d"+value+".png");
+			dImg.setAttribute("src","die"+value+".png");
 			dImg.setAttribute("alt","die image"+value+"spot(s)");
 			totalRoll(value);
 			totalDice++;
