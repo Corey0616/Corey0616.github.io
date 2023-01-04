@@ -1,0 +1,73 @@
+body{
+
+	font-family: Serif;
+	color: blue;
+	background-color:rgb(199, 243, 243);
+	padding:10px;
+}
+
+nav{
+
+	font-weight:bolder;
+	color:blue;
+	border-bottom: 1pt solid;
+
+}
+
+nav a{
+
+	text-decoration:overline;
+	display: block;
+}
+
+nav ul{
+	
+	position:absolute;
+	width: 72pt;
+	left:20px;
+	top: 50px;
+	list-style: none;
+} 
+.navbar li{
+
+	color:inherit;
+}
+nav:hover ul{
+
+	display:block;
+}
+
+nav ul:hover{
+
+	display: block;
+}
+
+
+nav ul li{
+
+	width: 20em;
+	background-color:blanchedalmond;
+	
+	border-top: 1pt solid; 
+	margin: 3px;
+	padding: 2px;
+	border-right: 10pt solid;
+	
+
+
+}
+nav ul li:hover{
+
+	background-color:black;
+	
+
+}
+
+
+@media (max-width: 700px){
+
+	nav ul li{
+
+		width :10em
+	}
+}
